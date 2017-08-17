@@ -1,0 +1,22 @@
+!< Database Information ====================>
+
+CREATE DATABASE project;
+
+CREATE TABLE user(
+	uId int(5) not null auto_increment primary key,
+	email varchar(50),
+	password varchar(100),
+	uName varchar(50),
+	phone varchar(10),
+	ec varchar(50),
+	ecp varchar(ecp)
+);
+
+CREATE TABLE activity(
+	id int(5) not null auto_increment primary key,
+	aName varchar(50),
+	location varchar(50),
+	start date,
+	end date,
+	uid int(5)
+;)
