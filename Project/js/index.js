@@ -76,10 +76,14 @@ function validateRegister() {
 	}
 }
 function validateCreateActivity() {
-	var aName = document.forms["createActivityForm"]["aName"].value, location = document.forms["createActivityForm"]["location"].value, startY = document.forms["createActivityForm"]["startY"].value, startM = document.forms["createActivityForm"]["startM"].value, startD = document.forms["createActivityForm"]["startD"].value, endY = document.forms["createActivityForm"]["endY"].value, endM = document.forms["createActivityForm"]["startM"].value, endD = document.forms["createActivityForm"]["endD"].value, text;
+	var aName = document.forms["createActivityForm"]["aName"].value, location = document.forms["createActivityForm"]["location"].value, startY = document.forms["createActivityForm"]["startY"].value, startM = document.forms["createActivityForm"]["startM"].value, startD = document.forms["createActivityForm"]["startD"].value, endY = document.forms["createActivityForm"]["endY"].value, endM = document.forms["createActivityForm"]["endM"].value, endD = document.forms["createActivityForm"]["endD"].value, text;
 	
-	var start = startY + startM + startD;
-	var end = endY + endM + endD;
+	var start = startY + "-" + startM + "-" + startD;
+	start = new Date(startY, startM, startD);
+	start = start.getTime();
+	var end = endY + "-" + endM + "-" + endD;	
+	end = new Date(endY, endM, endD);
+	end = end.getTime();
 	
 	if (aName == "" || location == "" || startY == "" || startM == "" || startD == "" || endY == "" || endM == "" || endD == "") {
 		text = "Must enter all fields!";
