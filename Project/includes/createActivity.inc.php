@@ -25,7 +25,10 @@ if (!isset($aName) || !isset($location) || !isset($startY) || !isset($startM) ||
 	exit();
 }
 // Verify dates make sense ============================== //
-if (strtotime($end) <= strtotime($start)) {
+$x = strtotime($end);
+$y = strtotime($start);
+
+if ($x <= $y) {
 	header("Location: ../php/user.php");
 	exit();
 }
